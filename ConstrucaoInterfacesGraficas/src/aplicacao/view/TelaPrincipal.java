@@ -12,7 +12,6 @@ import javax.swing.JLabel;
 
 public class TelaPrincipal extends JFrame {
 	
-	private FlowLayout layout;
 	private JLabel lblTela;
 	private Image imgReciclagem;
 	static JMenuBar barraMenu;
@@ -27,7 +26,6 @@ public class TelaPrincipal extends JFrame {
 	}
 	
 	private void criar() {
-		this.layout = new FlowLayout();
 		barraMenu = new JMenuBar();
 		lblTela = new JLabel();
 		interessado = new JMenu("Interessado(a)");
@@ -41,10 +39,12 @@ public class TelaPrincipal extends JFrame {
 	}
 	
 	private void configurar() {
-		getContentPane().setLayout(layout);
+		getContentPane().setLayout(null);
 		imgReciclagem = new ImageIcon(this.getClass().getResource("/reciclagem.png")).getImage().getScaledInstance(630, 630, Image.SCALE_DEFAULT);
 		lblTela.setIcon(new ImageIcon(imgReciclagem));
+		lblTela.setBounds(75, 5, 630, 630);
 		this.setSize(800, 700);
+		this.setResizable(false);
 		this.setTitle("Tela Inicial");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
