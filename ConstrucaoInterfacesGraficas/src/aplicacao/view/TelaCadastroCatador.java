@@ -1,17 +1,16 @@
 package aplicacao.view;
 
-import java.awt.FlowLayout;
+import java.awt.Color;
+import java.awt.Font;
+
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import java.awt.Font;
-import java.awt.Color;
-import java.awt.SystemColor;
 
-public class TelaCadastroInteressado extends JFrame {
+public class TelaCadastroCatador extends JFrame {
 	
 	private JLabel lblTitulo;
 	private JLabel lblNome;
@@ -22,6 +21,7 @@ public class TelaCadastroInteressado extends JFrame {
 	private JLabel lblTelefone;
 	private JLabel lblTipoResiduo;
 	private JLabel lblDiaSemana;
+	private JLabel lblRota;
 	
 	private JTextField txtNome;
 	private JTextField txtEndereco;
@@ -41,13 +41,29 @@ public class TelaCadastroInteressado extends JFrame {
 	private JCheckBox chckbxQuinta;
 	private JCheckBox chckbxSexta;
 	private JCheckBox chckbxSabado;
+	private JCheckBox chckbxRota1;
+	private JCheckBox chckbxRota2;
+	private JCheckBox chckbxRota3;
+	private JCheckBox chckbxRota4;
+	private JCheckBox chckbxRota5;
+	private JCheckBox chckbxRota6;
+	private JCheckBox chckbxRota7;
+	private JCheckBox chckbxRota8;
+	private JCheckBox chckbxRota9;
+	private JCheckBox chckbxRota10;
+	private JCheckBox chckbxRota11;
+	private JCheckBox chckbxRota12;
+	private JCheckBox chckbxRota13;
+	private JCheckBox chckbxRota14;
+	private JCheckBox chckbxRota15;
+	
 	
 	private JButton btnCadastrar;
 	private JButton btnLimpar;
 	private JButton btnVoltar;
 	
 	
-	public TelaCadastroInteressado() {
+	public TelaCadastroCatador() {
 		
 		criar();
 		configurar();
@@ -57,7 +73,7 @@ public class TelaCadastroInteressado extends JFrame {
 	
 	private void criar() {
 		
-		lblTitulo = new JLabel("CADASTRO DE INTERESSADO(A)");
+		lblTitulo = new JLabel("CADASTRO DE CATADOR(A)");
 		lblNome = new JLabel("Nome: ");
 		lblEndereco = new JLabel("Endereço: ");
 		lblNumero = new JLabel("Número: ");
@@ -66,6 +82,7 @@ public class TelaCadastroInteressado extends JFrame {
 		lblTelefone = new JLabel("Telefone: ");
 		lblTipoResiduo = new JLabel("<html>Tipos de\n Resíduos:</html>");
 		lblDiaSemana = new JLabel("<html>Dias da\n Semana:</html>");
+		lblRota = new JLabel("<html>Rotas\n Atendidas:</html>");
 		
 		txtNome = new JTextField(20);
 		txtEndereco = new JTextField(50);
@@ -85,6 +102,21 @@ public class TelaCadastroInteressado extends JFrame {
 		chckbxQuinta = new JCheckBox("Quinta-feira");
 		chckbxSexta = new JCheckBox("Sexta-feira");
 		chckbxSabado = new JCheckBox("Sábado");
+		chckbxRota1 = new JCheckBox("Rota 1");
+		chckbxRota2 = new JCheckBox("Rota 2");
+		chckbxRota3 = new JCheckBox("Rota 3");
+		chckbxRota4 = new JCheckBox("Rota 4");
+		chckbxRota5 = new JCheckBox("Rota 5");
+		chckbxRota6 = new JCheckBox("Rota 6");
+		chckbxRota7 = new JCheckBox("Rota 7");
+		chckbxRota8 = new JCheckBox("Rota 8");
+		chckbxRota9 = new JCheckBox("Rota 9");
+		chckbxRota10 = new JCheckBox("Rota 10");
+		chckbxRota11 = new JCheckBox("Rota 11");
+		chckbxRota12 = new JCheckBox("Rota 12");
+		chckbxRota13 = new JCheckBox("Rota 13");
+		chckbxRota14 = new JCheckBox("Rota 14");
+		chckbxRota15 = new JCheckBox("Rota 15");
 		
 		btnCadastrar = new JButton("Cadastrar");
 		btnLimpar = new JButton("Limpar");
@@ -96,7 +128,7 @@ public class TelaCadastroInteressado extends JFrame {
 		
 		getContentPane().setLayout(null);
 		this.setSize(800, 700);
-		this.setTitle("Cadastro de Interessado(a)");
+		this.setTitle("Cadastro de Catador(a)");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		
@@ -139,6 +171,10 @@ public class TelaCadastroInteressado extends JFrame {
 		lblDiaSemana.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblDiaSemana.setBounds(247, 265, 69, 43);
 		
+		lblRota.setFont(new Font("Arial", Font.PLAIN, 14));
+		lblRota.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblRota.setBounds(10, 414, 69, 43);
+		
 		
 		txtNome.setFont(new Font("Arial", Font.PLAIN, 14));
 		txtNome.setBounds(89, 99, 348, 20);
@@ -158,20 +194,21 @@ public class TelaCadastroInteressado extends JFrame {
 		txtTelefone.setFont(new Font("Arial", Font.PLAIN, 14));
 		txtTelefone.setBounds(89, 223, 348, 20);
 		
+		
 		chckbxPapel.setFont(new Font("Arial", Font.PLAIN, 14));
 		chckbxPapel.setBounds(89, 268, 75, 20);
 		
 		chckbxPlastico.setFont(new Font("Arial", Font.PLAIN, 14));
-		chckbxPlastico.setBounds(89, 291, 75, 20);
+		chckbxPlastico.setBounds(89, 288, 75, 20);
 		
 		chckbxVidro.setFont(new Font("Arial", Font.PLAIN, 14));
-		chckbxVidro.setBounds(89, 314, 75, 20);
+		chckbxVidro.setBounds(89, 308, 75, 20);
 		
 		chckbxMetal.setFont(new Font("Arial", Font.PLAIN, 14));
-		chckbxMetal.setBounds(89, 337, 75, 20);
+		chckbxMetal.setBounds(89, 328, 75, 20);
 		
 		chckbxOrganico.setFont(new Font("Arial", Font.PLAIN, 14));
-		chckbxOrganico.setBounds(89, 360, 95, 20);
+		chckbxOrganico.setBounds(89, 348, 95, 20);
 		
 		chckbxSegunda.setFont(new Font("Arial", Font.PLAIN, 14));
 		chckbxSegunda.setBounds(322, 268, 115, 20);
@@ -191,17 +228,63 @@ public class TelaCadastroInteressado extends JFrame {
 		chckbxSabado.setFont(new Font("Arial", Font.PLAIN, 14));
 		chckbxSabado.setBounds(322, 368, 115, 20);
 		
-		btnCadastrar.setFont(new Font("Arial", Font.PLAIN, 14));
-		btnCadastrar.setBounds(10, 468, 100, 37);
+		chckbxRota1.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota1.setBounds(89, 414, 115, 20);
+		
+		chckbxRota2.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota2.setBounds(89, 434, 115, 20);
+		
+		chckbxRota3.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota3.setBounds(89, 454, 115, 20);
+		
+		chckbxRota4.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota4.setBounds(89, 474, 115, 20);
+		
+		chckbxRota5.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota5.setBounds(89, 494, 115, 20);
+		
+		chckbxRota6.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota6.setBounds(223, 414, 75, 20);
+		
+		chckbxRota7.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota7.setBounds(223, 434, 75, 20);
+		
+		chckbxRota8.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota8.setBounds(223, 454, 75, 20);
+		
+		chckbxRota9.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota9.setBounds(223, 474, 75, 20);
+		
+		chckbxRota10.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota10.setBounds(223, 494, 75, 20);
+		
+		chckbxRota11.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota11.setBounds(362, 414, 75, 20);
+		
+		chckbxRota12.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota12.setBounds(362, 434, 75, 20);
+		
+		chckbxRota13.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota13.setBounds(362, 454, 75, 20);
+		
+		chckbxRota14.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota14.setBounds(362, 474, 75, 20);
+		
+		chckbxRota15.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota15.setBounds(362, 494, 75, 20);
+		
 		
 		btnCadastrar.setFont(new Font("Arial", Font.PLAIN, 14));
-		btnCadastrar.setBounds(10, 468, 100, 37);
+		btnCadastrar.setBounds(10, 530, 100, 37);
+		
+		btnCadastrar.setFont(new Font("Arial", Font.PLAIN, 14));
+		btnCadastrar.setBounds(10, 602, 100, 37);
 		
 		btnLimpar.setFont(new Font("Arial", Font.PLAIN, 14));
-		btnLimpar.setBounds(171, 468, 100, 37);
+		btnLimpar.setBounds(171, 602, 100, 37);
 		
 		btnVoltar.setFont(new Font("Arial", Font.PLAIN, 14));
-		btnVoltar.setBounds(337, 468, 100, 37);
+		btnVoltar.setBounds(337, 602, 100, 37);
 		
 	}
 	
@@ -233,11 +316,28 @@ public class TelaCadastroInteressado extends JFrame {
 		getContentPane().add(chckbxQuinta);
 		getContentPane().add(chckbxSexta);
 		getContentPane().add(chckbxSabado);
+		getContentPane().add(chckbxRota1);
+		getContentPane().add(chckbxRota2);
+		getContentPane().add(chckbxRota3);
+		getContentPane().add(chckbxRota4);
+		getContentPane().add(chckbxRota5);
+		getContentPane().add(chckbxRota6);
+		getContentPane().add(chckbxRota7);
+		getContentPane().add(chckbxRota8);
+		getContentPane().add(chckbxRota9);
+		getContentPane().add(chckbxRota10);
+		getContentPane().add(chckbxRota11);
+		getContentPane().add(chckbxRota12);
+		getContentPane().add(chckbxRota13);
+		getContentPane().add(chckbxRota14);
+		getContentPane().add(chckbxRota15);
+		getContentPane().add(lblRota);
 		getContentPane().add(btnCadastrar);
 		getContentPane().add(btnLimpar);
 		getContentPane().add(btnVoltar);
 		
 		
 	}
+
 
 }
