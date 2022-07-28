@@ -65,13 +65,13 @@ public class TelaCadastroCatador extends JFrame {
 	
 	public TelaCadastroCatador() {
 		
-		criar();
-		configurar();
-		adicionar();
+		criarComponentes();
+		configurarComponentes();
+		adicionarComponentes();
 		
 	}
 	
-	private void criar() {
+	private void criarComponentes() {
 		
 		lblTitulo = new JLabel("CADASTRO DE CATADOR(A)");
 		lblNome = new JLabel("Nome: ");
@@ -124,7 +124,7 @@ public class TelaCadastroCatador extends JFrame {
 		
 	}
 	
-	private void configurar() {
+	private void configurarComponentes() {
 		
 		getContentPane().setLayout(null);
 		this.setSize(800, 700);
@@ -288,7 +288,7 @@ public class TelaCadastroCatador extends JFrame {
 		
 	}
 	
-	private void adicionar() {
+	private void adicionarComponentes() {
 		
 		getContentPane().add(lblTitulo);
 		getContentPane().add(lblNome);

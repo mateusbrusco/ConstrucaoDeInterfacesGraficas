@@ -2,6 +2,8 @@ package aplicacao.view;
 
 import java.awt.FlowLayout;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -20,12 +22,13 @@ public class TelaPrincipal extends JFrame {
 	
 	
 	public TelaPrincipal () {
-		criar();
-		configurar();
-		adicionar();
+		criarComponentes();
+		configurarComponentes();
+		adicionarComponentes();
+		configurarListeners();
 	}
 	
-	private void criar() {
+	private void criarComponentes() {
 		barraMenu = new JMenuBar();
 		lblTela = new JLabel();
 		interessado = new JMenu("Interessado(a)");
@@ -38,7 +41,7 @@ public class TelaPrincipal extends JFrame {
 		
 	}
 	
-	private void configurar() {
+	private void configurarComponentes() {
 		getContentPane().setLayout(null);
 		imgReciclagem = new ImageIcon(this.getClass().getResource("/reciclagem.png")).getImage().getScaledInstance(630, 630, Image.SCALE_DEFAULT);
 		lblTela.setIcon(new ImageIcon(imgReciclagem));
@@ -50,7 +53,7 @@ public class TelaPrincipal extends JFrame {
 		
 	}
 	
-	private void adicionar() {
+	private void adicionarComponentes() {
 		
 		getContentPane().add(lblTela);
 		
@@ -66,6 +69,18 @@ public class TelaPrincipal extends JFrame {
 		this.setJMenuBar(barraMenu);
 
 		
+		
+	}
+	
+	private void configurarListeners() {
+		
+		cadastraInteressado.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaCadastroInteressado cadastroInteressado = new TelaCadastroInteressado();
+				cadastroInteressado.setVisible(true);
+				dispose();
+			}
+		});
 		
 	}
 
