@@ -2,6 +2,8 @@ package aplicacao.view;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -68,6 +70,7 @@ public class TelaCadastroCatador extends JFrame {
 		criarComponentes();
 		configurarComponentes();
 		adicionarComponentes();
+		configurarListeners();
 		
 	}
 	
@@ -335,6 +338,21 @@ public class TelaCadastroCatador extends JFrame {
 		getContentPane().add(btnCadastrar);
 		getContentPane().add(btnLimpar);
 		getContentPane().add(btnVoltar);
+		
+		
+	}
+	
+	private void configurarListeners() {
+		
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaPrincipal telaPrincipal = new TelaPrincipal();
+				telaPrincipal.setVisible(true);
+				dispose();
+			}
+		});
+		
+	
 		
 		
 	}

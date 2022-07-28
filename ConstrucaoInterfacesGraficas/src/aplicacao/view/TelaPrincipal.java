@@ -1,6 +1,5 @@
 package aplicacao.view;
 
-import java.awt.FlowLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,7 +17,7 @@ public class TelaPrincipal extends JFrame {
 	private Image imgReciclagem;
 	static JMenuBar barraMenu;
 	static JMenu interessado, catador, rota;
-	static JMenuItem cadastraInteressado, alteraInteressado, buscaInteressado, removeInteressado;
+	static JMenuItem cadastraInteressado, alteraInteressado, buscaInteressado, removeInteressado, cadastraCatador, alteraCatador, buscaCatador, removeCatador;
 	
 	
 	public TelaPrincipal () {
@@ -34,10 +33,16 @@ public class TelaPrincipal extends JFrame {
 		interessado = new JMenu("Interessado(a)");
 		catador = new JMenu("Catador(a)");
 		rota = new JMenu("Rota");
+		
 		cadastraInteressado = new JMenuItem("Cadastro de interessado(a)");
 		alteraInteressado = new JMenuItem("Alteração de cadastro de interessado(a)");
 		buscaInteressado = new JMenuItem("Busca de interessado(a) cadastrado");
 		removeInteressado = new JMenuItem("Exclusão de cadastro de interessado(a)");
+		
+		cadastraCatador = new JMenuItem("Cadastro de catador(a)");
+		alteraCatador = new JMenuItem("Alteração de cadastro de catador(a)");
+		buscaCatador = new JMenuItem("Busca de catador(a) cadastrado");
+		removeCatador = new JMenuItem("Exclusão de cadastro de catador(a)");
 		
 	}
 	
@@ -62,6 +67,11 @@ public class TelaPrincipal extends JFrame {
 		interessado.add(buscaInteressado);
 		interessado.add(removeInteressado);
 		
+		catador.add(cadastraCatador);
+		catador.add(alteraCatador);
+		catador.add(buscaCatador);
+		catador.add(removeCatador);
+		
 		barraMenu.add(interessado);
 		barraMenu.add(catador);
 		barraMenu.add(rota);
@@ -81,6 +91,17 @@ public class TelaPrincipal extends JFrame {
 				dispose();
 			}
 		});
+		
+		cadastraCatador.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaCadastroCatador cadastroCatador = new TelaCadastroCatador();
+				cadastroCatador.setVisible(true);
+				dispose();
+			}
+		});
+		
+		
+		
 		
 	}
 

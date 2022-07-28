@@ -10,6 +10,8 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class TelaCadastroInteressado extends JFrame {
 	
@@ -49,13 +51,14 @@ public class TelaCadastroInteressado extends JFrame {
 	
 	public TelaCadastroInteressado() {
 		
-		criar();
-		configurar();
-		adicionar();
+		criarComponentes();
+		configurarComponentes();
+		adicionarComponentes();
+		configurarListeners();
 		
 	}
 	
-	private void criar() {
+	private void criarComponentes() {
 		
 		lblTitulo = new JLabel("CADASTRO DE INTERESSADO(A)");
 		lblNome = new JLabel("Nome: ");
@@ -92,7 +95,7 @@ public class TelaCadastroInteressado extends JFrame {
 		
 	}
 	
-	private void configurar() {
+	private void configurarComponentes() {
 		
 		getContentPane().setLayout(null);
 		this.setSize(800, 700);
@@ -205,7 +208,7 @@ public class TelaCadastroInteressado extends JFrame {
 		
 	}
 	
-	private void adicionar() {
+	private void adicionarComponentes() {
 		
 		getContentPane().add(lblTitulo);
 		getContentPane().add(lblNome);
@@ -236,6 +239,21 @@ public class TelaCadastroInteressado extends JFrame {
 		getContentPane().add(btnCadastrar);
 		getContentPane().add(btnLimpar);
 		getContentPane().add(btnVoltar);
+		
+		
+	}
+	
+	private void configurarListeners() {
+		
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaPrincipal telaPrincipal = new TelaPrincipal();
+				telaPrincipal.setVisible(true);
+				dispose();
+			}
+		});
+		
+	
 		
 		
 	}
