@@ -1,6 +1,5 @@
 package aplicacao.view;
 
-import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -9,7 +8,6 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Color;
-import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
