@@ -163,16 +163,16 @@ public class TelaCadastroInteressado extends JFrame {
 		chckbxPapel.setBounds(89, 268, 75, 20);
 		
 		chckbxPlastico.setFont(new Font("Arial", Font.PLAIN, 14));
-		chckbxPlastico.setBounds(89, 291, 75, 20);
+		chckbxPlastico.setBounds(89, 288, 75, 20);
 		
 		chckbxVidro.setFont(new Font("Arial", Font.PLAIN, 14));
-		chckbxVidro.setBounds(89, 314, 75, 20);
+		chckbxVidro.setBounds(89, 308, 75, 20);
 		
 		chckbxMetal.setFont(new Font("Arial", Font.PLAIN, 14));
-		chckbxMetal.setBounds(89, 337, 75, 20);
+		chckbxMetal.setBounds(89, 328, 75, 20);
 		
 		chckbxOrganico.setFont(new Font("Arial", Font.PLAIN, 14));
-		chckbxOrganico.setBounds(89, 360, 95, 20);
+		chckbxOrganico.setBounds(89, 348, 95, 20);
 		
 		chckbxSegunda.setFont(new Font("Arial", Font.PLAIN, 14));
 		chckbxSegunda.setBounds(322, 268, 115, 20);
