@@ -13,7 +13,7 @@ public class CatadorController {
 		catadorDAO = new CatadorDAO();
 	}
 	
-	public void incluir(String nomeCatador, String enderecoCatador, String numeroCatador, String complementoCatador, String emailCatador, String telefoneCatador, String tipoResiduoColetado, String diaSemanaEmQueColeta) {
+	public void incluir(String nomeCatador, String enderecoCatador, String numeroCatador, String complementoCatador, String emailCatador, String telefoneCatador, String tipoResiduoColetado, String diaSemanaEmQueColeta, String rotas) {
 		catador = new CatadorModel();
 		catador.setNomeCatador(nomeCatador);
 		catador.setEnderecoCatador(enderecoCatador);
@@ -23,6 +23,7 @@ public class CatadorController {
 		catador.setTelefoneCatador(telefoneCatador);
 		catador.setDiaSemanaEmQueColeta(diaSemanaEmQueColeta);
 		catador.setTipoResiduoColetado(tipoResiduoColetado);
+		catador.setRotas(rotas);
 		catadorDAO.incluir(catador);
 	}
 	

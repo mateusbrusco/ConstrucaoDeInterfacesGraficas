@@ -10,6 +10,7 @@ public class CatadorModel {
 	private String telefoneCatador;
 	private String tipoResiduoColetado;
 	private String diaSemanaEmQueColeta;
+	private String rotas;
 	
 	public CatadorModel () {
 		super();
@@ -25,6 +26,7 @@ public class CatadorModel {
 		this.telefoneCatador = telefoneCatador;
 		this.tipoResiduoColetado = tipoResiduoColetado; 
 		this.diaSemanaEmQueColeta = diaSemanaEmQueColeta;
+		this.rotas = rotas;
 	}
 
 	public String getNomeCatador() {
@@ -91,6 +93,13 @@ public class CatadorModel {
 		this.diaSemanaEmQueColeta = diaSemanaEmQueColeta;
 	}
 	
+	public String getRotas() {
+		return rotas;
+	}
+
+	public void setRotas(String rotas) {
+		this.rotas = rotas;
+	}
 
 
 }

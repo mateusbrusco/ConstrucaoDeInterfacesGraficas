@@ -12,6 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import aplicacao.controller.CatadorController;
+
 public class TelaCadastroCatador extends JFrame {
 	
 	private JLabel lblTitulo;
@@ -59,6 +61,8 @@ public class TelaCadastroCatador extends JFrame {
 	private JCheckBox chckbxRota14;
 	private JCheckBox chckbxRota15;
 	
+	private CatadorController catador;
+	
 	
 	private JButton btnCadastrar;
 	private JButton btnLimpar;
@@ -75,7 +79,7 @@ public class TelaCadastroCatador extends JFrame {
 	}
 	
 	private void criarComponentes() {
-		
+		catador = new CatadorController();
 		lblTitulo = new JLabel("CADASTRO DE CATADOR(A)");
 		lblNome = new JLabel("Nome: ");
 		lblEndereco = new JLabel("Endereço: ");
@@ -353,7 +357,93 @@ public class TelaCadastroCatador extends JFrame {
 		});
 		
 	
-		
+		btnCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				String tipoResiduo = "";
+				String diaSemana = "";
+				String rotas = "";
+				if(chckbxPapel.isSelected()) {
+					tipoResiduo = "Papel; ";
+				}
+				if(chckbxPlastico.isSelected()) {
+					tipoResiduo += "Plástico; ";
+				}
+				if(chckbxVidro.isSelected()) {
+					tipoResiduo += "Vidro; ";
+				}
+				if(chckbxMetal.isSelected()) {
+					tipoResiduo += "Metal; ";
+				}
+				if(chckbxOrganico.isSelected()) {
+					tipoResiduo += "Orgânico; ";
+				}
+				if(chckbxSegunda.isSelected()) {
+					diaSemana = "Segunda; ";
+				}
+				if(chckbxTerca.isSelected()) {
+					diaSemana += "Terça; ";
+				}
+				if(chckbxQuarta.isSelected()) {
+					diaSemana += "Quarta; ";
+				}
+				if(chckbxQuinta.isSelected()) {
+					diaSemana += "Quinta; ";
+				}
+				if(chckbxSexta.isSelected()) {
+					diaSemana += "Sexta; ";
+				}
+				if(chckbxSabado.isSelected()) {
+					diaSemana += "Sábado; ";
+				}
+				if(chckbxRota1.isSelected()) {
+					rotas = "Rota 1; ";
+				}
+				if(chckbxRota2.isSelected()) {
+					rotas += "Rota 2; ";
+				}
+				if(chckbxRota3.isSelected()) {
+					rotas += "Rota 3; ";
+				}
+				if(chckbxRota4.isSelected()) {
+					rotas += "Rota 4; ";
+				}
+				if(chckbxRota5.isSelected()) {
+					rotas += "Rota 5; ";
+				}
+				if(chckbxRota6.isSelected()) {
+					rotas += "Rota 6; ";
+				}
+				if(chckbxRota7.isSelected()) {
+					rotas += "Rota 7; ";
+				}
+				if(chckbxRota8.isSelected()) {
+					rotas += "Rota 8; ";
+				}
+				if(chckbxRota9.isSelected()) {
+					rotas += "Rota 9; ";
+				}
+				if(chckbxRota10.isSelected()) {
+					rotas += "Rota 10; ";
+				}
+				if(chckbxRota11.isSelected()) {
+					rotas += "Rota 11; ";
+				}
+				if(chckbxRota12.isSelected()) {
+					rotas += "Rota 12; ";
+				}
+				if(chckbxRota13.isSelected()) {
+					rotas += "Rota 13; ";
+				}
+				if(chckbxRota14.isSelected()) {
+					rotas += "Rota 14; ";
+				}
+				if(chckbxRota15.isSelected()) {
+					rotas += "Rota 15; ";
+				}
+				catador.incluir(txtNome.getText(), txtEndereco.getText(), txtNumero.getText(), txtComplemento.getText(), txtEmail.getText(), txtTelefone.getText(), tipoResiduo, diaSemana, rotas);
+			}
+		});
 		
 	}
 
