@@ -9,13 +9,13 @@ public class InteressadoModel {
 	private String emailInteressado;
 	private String telefoneInteressado;
 	private String tipoResiduoInteressado;
-	private String diaSemanaColetaInteressado;
+	private String diaSemanaInteressado;
 	
 	public InteressadoModel () {
 		super();
 	}
 	
-	public InteressadoModel(String nomeInteressado, String enderecoInteressado, String numeroInteressado, String complementoInteressado, String emailInteressado, String telefoneInteressado, String tipoResiduoInteressado, String diaSemanaColetaInteressado) {
+	public InteressadoModel(String nomeInteressado, String enderecoInteressado, String numeroInteressado, String complementoInteressado, String emailInteressado, String telefoneInteressado, String tipoResiduoInteressado, String diaSemanaInteressado) {
 		super();
 		this.nomeInteressado = nomeInteressado; 
 		this.enderecoInteressado = enderecoInteressado;
@@ -24,7 +24,7 @@ public class InteressadoModel {
 		this.emailInteressado = emailInteressado;
 		this.telefoneInteressado = telefoneInteressado;
 		this.tipoResiduoInteressado = tipoResiduoInteressado; 
-		this.diaSemanaColetaInteressado = diaSemanaColetaInteressado;
+		this.diaSemanaInteressado = diaSemanaInteressado;
 	}
 
 	public String getNomeInteressado() {
@@ -83,12 +83,12 @@ public class InteressadoModel {
 		this.tipoResiduoInteressado = tipoResiduoInteressado;
 	}
 
-	public String getDiaSemanaColetaInteressado() {
-		return diaSemanaColetaInteressado;
+	public String getDiaSemanaInteressado() {
+		return diaSemanaInteressado;
 	}
 
-	public void setDiaSemanaColetaInteressado(String diaSemanaColetaInteressado) {
-		this.diaSemanaColetaInteressado = diaSemanaColetaInteressado;
+	public void setDiaSemanaInteressado(String diaSemanaInteressado) {
+		this.diaSemanaInteressado = diaSemanaInteressado;
 	}
 
 	

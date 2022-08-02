@@ -6,6 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+
+import aplicacao.controller.InteressadoController;
+
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -46,6 +49,8 @@ public class TelaCadastroInteressado extends JFrame {
 	private JButton btnLimpar;
 	private JButton btnVoltar;
 	
+	private InteressadoController interessado;
+	
 	
 	public TelaCadastroInteressado() {
 		
@@ -57,7 +62,7 @@ public class TelaCadastroInteressado extends JFrame {
 	}
 	
 	private void criarComponentes() {
-		
+		interessado = new InteressadoController();
 		lblTitulo = new JLabel("CADASTRO DE INTERESSADO(A)");
 		lblNome = new JLabel("Nome: ");
 		lblEndereco = new JLabel("Endereço: ");
@@ -251,7 +256,48 @@ public class TelaCadastroInteressado extends JFrame {
 			}
 		});
 		
-	
+		btnCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				String tipoResiduo = "";
+				String diaSemana = "";
+				if(chckbxPapel.isSelected()) {
+					tipoResiduo = "Papel; ";
+				}
+				if(chckbxPlastico.isSelected()) {
+					tipoResiduo += "Plástico; ";
+				}
+				if(chckbxVidro.isSelected()) {
+					tipoResiduo += "Vidro; ";
+				}
+				if(chckbxMetal.isSelected()) {
+					tipoResiduo += "Metal; ";
+				}
+				if(chckbxOrganico.isSelected()) {
+					tipoResiduo += "Orgânico; ";
+				}
+				if(chckbxSegunda.isSelected()) {
+					diaSemana = "Segunda; ";
+				}
+				if(chckbxTerca.isSelected()) {
+					diaSemana += "Terça; ";
+				}
+				if(chckbxQuarta.isSelected()) {
+					diaSemana += "Quarta; ";
+				}
+				if(chckbxQuinta.isSelected()) {
+					diaSemana += "Quinta; ";
+				}
+				if(chckbxSexta.isSelected()) {
+					diaSemana += "Sexta; ";
+				}
+				if(chckbxSabado.isSelected()) {
+					diaSemana += "Sábado; ";
+				}
+				
+				interessado.incluir(txtNome.getText(), txtEndereco.getText(), txtNumero.getText(), txtComplemento.getText(), txtEmail.getText(), txtTelefone.getText(), tipoResiduo, diaSemana);
+			}
+		});
 		
 		
 	}

@@ -14,7 +14,7 @@ public class InteressadoController {
 	}
 	
 	
-	public void incluir(String nomeInteressado, String enderecoInteressado, String numeroInteressado, String complementoInteressado, String emailInteressado, String telefoneInteressado, String tipoResiduoInteressado, String diaSemanaColetaInteressado) {
+	public void incluir(String nomeInteressado, String enderecoInteressado, String numeroInteressado, String complementoInteressado, String emailInteressado, String telefoneInteressado, String tipoResiduoInteressado, String diaSemanaInteressado) {
 		interessado = new InteressadoModel();
 		interessado.setNomeInteressado(nomeInteressado);
 		interessado.setEnderecoInteressado(enderecoInteressado);
@@ -22,7 +22,7 @@ public class InteressadoController {
 		interessado.setComplementoInteressado(complementoInteressado);
 		interessado.setEmailInteressado(emailInteressado);
 		interessado.setTelefoneInteressado(telefoneInteressado);
-		interessado.setDiaSemanaColetaInteressado(diaSemanaColetaInteressado);
+		interessado.setDiaSemanaInteressado(diaSemanaInteressado);
 		interessado.setTipoResiduoInteressado(tipoResiduoInteressado);
 		interessadoDAO.incluir(interessado);
 	}
@@ -41,7 +41,7 @@ public class InteressadoController {
 		interessado.setComplementoInteressado(complementoInteressado);
 		interessado.setEmailInteressado(emailInteressado);
 		interessado.setTelefoneInteressado(telefoneInteressado);
-		interessado.setDiaSemanaColetaInteressado(diaSemanaColetaInteressado);
+		interessado.setDiaSemanaInteressado(diaSemanaColetaInteressado);
 		interessado.setTipoResiduoInteressado(tipoResiduoInteressado);
 		interessadoDAO.alterar(interessado);
 	}

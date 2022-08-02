@@ -11,7 +11,7 @@ public class InteressadoDAO {
 	
 	public void incluir(InteressadoModel interessado) {
 		
-		String sql = "INSERT INTO interessado (nomeInteressado, enderecoInteressado, numeroInteressado, complementoInteressado, emailInteressado, telefoneInteressado, tipoResiduoInteressado, diaSemanaColetaInteressado) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO interessado (nome, endereco, numero, complemento, email, telefone, tiporesiduo, diasemana) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 		Connection con = null;
 		PreparedStatement pstm = null;
 		
@@ -26,7 +26,7 @@ public class InteressadoDAO {
 			pstm.setString(5, interessado.getEmailInteressado());
 			pstm.setString(6, interessado.getTelefoneInteressado());
 			pstm.setString(7, interessado.getTipoResiduoInteressado());
-			pstm.setString(8, interessado.getDiaSemanaColetaInteressado());			
+			pstm.setString(8, interessado.getDiaSemanaInteressado());			
 			pstm.execute();
 			
 		}catch(Exception e) {
@@ -99,7 +99,7 @@ public class InteressadoDAO {
 			pstm.setString(5, interessado.getEmailInteressado());
 			pstm.setString(6, interessado.getTelefoneInteressado());
 			pstm.setString(7, interessado.getTipoResiduoInteressado());
-			pstm.setString(8, interessado.getDiaSemanaColetaInteressado());			
+			pstm.setString(8, interessado.getDiaSemanaInteressado());			
 			pstm.execute();
 			
 		}catch(Exception e) {
@@ -149,7 +149,7 @@ public class InteressadoDAO {
 					interessado.setEmailInteressado(rs.getString("emailInteressado"));
 					interessado.setTelefoneInteressado(rs.getString("telefoneInteressado"));
 					interessado.setTipoResiduoInteressado(rs.getString("tipoResiduoInteressado"));
-					interessado.setDiaSemanaColetaInteressado(rs.getString("diaSemanaColetaInteressado"));
+					interessado.setDiaSemanaInteressado(rs.getString("diaSemanaColetaInteressado"));
 					listaInteressados.add(interessado);
 					
 				}
