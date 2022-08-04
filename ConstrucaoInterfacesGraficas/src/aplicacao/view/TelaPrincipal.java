@@ -100,7 +100,21 @@ public class TelaPrincipal extends JFrame {
 			}
 		});
 		
+		buscaInteressado.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaAtualizaInteressado atualizaInteressado = new TelaAtualizaInteressado();
+				atualizaInteressado.setVisible(true);
+				dispose();
+			}
+		});
 		
+		buscaCatador.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaAtualizaCatador atualizaCatador = new TelaAtualizaCatador();
+				atualizaCatador.setVisible(true);
+				dispose();
+			}
+		});
 		
 		
 		

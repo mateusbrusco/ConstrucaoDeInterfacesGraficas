@@ -122,44 +122,45 @@ public class InteressadoDAO {
 		
 	}
 	
-	public ArrayList<InteressadoModel> consultar(InteressadoModel interessado) {
+	public ArrayList<InteressadoModel> consultar(String nome) {
 		
 		ResultSet rs = null;
 		Connection con = null;
 		PreparedStatement pstm = null;
-		ArrayList<InteressadoModel> listaInteressados = null;
+		ArrayList<InteressadoModel> interessados = null;
 		
 		try {
-			String sql = "SELECT * FROM interessado WHERE nomeInteressado = ?";
+			String sql = "SELECT * FROM interessado WHERE nome = ?";
 			con = ConexaoBD.getConnection();
 			pstm = con.prepareStatement(sql);
-			pstm.setString(1, interessado.getNomeInteressado());
+			pstm.setString(1, nome);
 			rs = pstm.executeQuery();
 			
 			if(rs != null) {
-				listaInteressados = new ArrayList<>();
+				interessados = new ArrayList<InteressadoModel>();
 				
 				while(rs.next()) {
-					
-					interessado = new InteressadoModel();
-					interessado.setNomeInteressado(rs.getString("nomeInteressado"));
-					interessado.setEnderecoInteressado(rs.getString("enderecoInteressado"));
-					interessado.setNumeroInteressado(rs.getString("numeroInteressado"));
-					interessado.setComplementoInteressado(rs.getString("complementoInteressado"));
-					interessado.setEmailInteressado(rs.getString("emailInteressado"));
-					interessado.setTelefoneInteressado(rs.getString("telefoneInteressado"));
-					interessado.setTipoResiduoInteressado(rs.getString("tipoResiduoInteressado"));
-					interessado.setDiaSemanaInteressado(rs.getString("diaSemanaColetaInteressado"));
-					listaInteressados.add(interessado);
-					
+					InteressadoModel interessado = new InteressadoModel();
+					interessado.setNomeInteressado(rs.getString("nome"));
+					interessado.setEnderecoInteressado(rs.getString("endereco"));
+					interessado.setNumeroInteressado(rs.getString("numero"));
+					interessado.setComplementoInteressado(rs.getString("complemento"));
+					interessado.setEmailInteressado(rs.getString("email"));
+					interessado.setTelefoneInteressado(rs.getString("telefone"));
+					interessado.setTipoResiduoInteressado(rs.getString("tiporesiduo"));
+					interessado.setDiaSemanaInteressado(rs.getString("diasemana"));
+					interessados.add(interessado);
 				}
+				
+				
 			}
+			
 			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 		
-		return null;
+		return interessados;
 	}
 
 }

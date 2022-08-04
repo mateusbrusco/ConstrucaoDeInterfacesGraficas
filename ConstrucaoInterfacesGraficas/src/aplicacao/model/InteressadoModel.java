@@ -1,5 +1,9 @@
 package aplicacao.model;
 
+import java.util.ArrayList;
+
+import aplicacao.dao.InteressadoDAO;
+
 public class InteressadoModel {
 	
 	private String nomeInteressado;
@@ -89,6 +93,10 @@ public class InteressadoModel {
 
 	public void setDiaSemanaInteressado(String diaSemanaInteressado) {
 		this.diaSemanaInteressado = diaSemanaInteressado;
+	}
+	
+	public ArrayList<InteressadoModel> consultar(String nome){
+		return new InteressadoDAO().consultar(nome);
 	}
 
 	

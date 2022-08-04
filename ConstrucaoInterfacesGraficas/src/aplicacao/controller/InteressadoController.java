@@ -1,5 +1,7 @@
 package aplicacao.controller;
 
+import java.util.ArrayList;
+
 import aplicacao.dao.InteressadoDAO;
 import aplicacao.model.InteressadoModel;
 
@@ -46,8 +48,8 @@ public class InteressadoController {
 		interessadoDAO.alterar(interessado);
 	}
 	
-	public void consultar() {
-		
+	public ArrayList<InteressadoModel> consultar(String nome){
+		return new InteressadoModel().consultar(nome);
 	}
 
 
