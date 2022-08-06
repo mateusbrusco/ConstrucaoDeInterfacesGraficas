@@ -116,6 +116,13 @@ public class TelaPrincipal extends JFrame {
 			}
 		});
 		
+		removeInteressado.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaExcluiInteressado excluiInteressado = new TelaExcluiInteressado();
+				excluiInteressado.setVisible(true);
+				dispose();
+			}
+		});
 		
 		
 	}

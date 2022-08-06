@@ -51,7 +51,7 @@ public class InteressadoDAO {
 	
 	public void excluir(InteressadoModel interessado) {
 		
-		String sql = "DELETE FROM interessado WHERE nomeInteressado = ?";
+		String sql = "DELETE FROM interessado WHERE nome = ?";
 		Connection con = null;
 		PreparedStatement pstm = null;
 		
