@@ -1,5 +1,10 @@
 package aplicacao.model;
 
+import java.util.ArrayList;
+
+import aplicacao.dao.CatadorDAO;
+import aplicacao.dao.InteressadoDAO;
+
 public class CatadorModel {
 	
 	private String nomeCatador;
@@ -16,7 +21,7 @@ public class CatadorModel {
 		super();
 	}
 	
-	public CatadorModel(String nomeCatador, String enderecoCatador, String numeroCatador, String complementoCatador, String emailCatador, String telefoneCatador, String tipoResiduoColetado, String diaSemanaEmQueColeta) {
+	public CatadorModel(String nomeCatador, String enderecoCatador, String numeroCatador, String complementoCatador, String emailCatador, String telefoneCatador, String tipoResiduoColetado, String diaSemanaEmQueColeta, String rotas) {
 		super();
 		this.nomeCatador = nomeCatador; 
 		this.enderecoCatador = enderecoCatador;
@@ -100,6 +105,11 @@ public class CatadorModel {
 	public void setRotas(String rotas) {
 		this.rotas = rotas;
 	}
+	
+	public ArrayList<CatadorModel> consultar(String nome){
+		return new CatadorDAO().consultar(nome);
+	}
+
 
 
 }

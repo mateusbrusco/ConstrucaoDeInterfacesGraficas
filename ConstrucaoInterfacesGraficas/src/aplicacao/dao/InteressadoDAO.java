@@ -84,7 +84,7 @@ public class InteressadoDAO {
 	
 	public void alterar(InteressadoModel interessado) {
 		
-		String sql = "UPDATE interessado SET enderecoInteressado = ?, numeroInteressado = ?, complementoInteressado = ?, emailInteressado = ?, telefoneInteressado = ?, tipoResiduoInteressado = ?, diaSemanaColetaInteressado = ?  WHERE nomeInteressado = ?";
+		String sql = "UPDATE interessado SET endereco = ?, numero = ?, complemento = ?, email = ?, telefone = ?, tiporesiduo = ?, diasemana = ?  WHERE nome = ?";
 		Connection con = null;
 		PreparedStatement pstm = null;
 		
@@ -92,14 +92,14 @@ public class InteressadoDAO {
 			con = ConexaoBD.getConnection();
 			
 			pstm = con.prepareStatement(sql);
-			pstm.setString(1, interessado.getNomeInteressado());
-			pstm.setString(2, interessado.getEnderecoInteressado());
-			pstm.setString(3, interessado.getNumeroInteressado());
-			pstm.setString(4, interessado.getComplementoInteressado());
-			pstm.setString(5, interessado.getEmailInteressado());
-			pstm.setString(6, interessado.getTelefoneInteressado());
-			pstm.setString(7, interessado.getTipoResiduoInteressado());
-			pstm.setString(8, interessado.getDiaSemanaInteressado());			
+			pstm.setString(1, interessado.getEnderecoInteressado());
+			pstm.setString(2, interessado.getNumeroInteressado());
+			pstm.setString(3, interessado.getComplementoInteressado());
+			pstm.setString(4, interessado.getEmailInteressado());
+			pstm.setString(5, interessado.getTelefoneInteressado());
+			pstm.setString(6, interessado.getTipoResiduoInteressado());
+			pstm.setString(7, interessado.getDiaSemanaInteressado());
+			pstm.setString(8, interessado.getNomeInteressado());
 			pstm.execute();
 			
 		}catch(Exception e) {

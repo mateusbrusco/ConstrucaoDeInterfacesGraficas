@@ -2,8 +2,11 @@ package aplicacao.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import aplicacao.model.CatadorModel;
+import aplicacao.model.InteressadoModel;
 
 public class CatadorDAO {
 	
@@ -54,11 +57,87 @@ public class CatadorDAO {
 	
 	public void alterar(CatadorModel catador) {
 		
-	}
-	
-	public CatadorModel consultar(CatadorModel catador) {
-		return null;
+		String sql = "UPDATE catador SET endereco = ?, numero = ?, complemento = ?, email = ?, telefone = ?, tiporesiduo = ?, diasemana = ?, rotas = ? WHERE nome = ?";
+		Connection con = null;
+		PreparedStatement pstm = null;
 		
+		try {
+			con = ConexaoBD.getConnection();
+			
+			pstm = con.prepareStatement(sql);
+			pstm.setString(1, catador.getEnderecoCatador());
+			pstm.setString(2, catador.getNumeroCatador());
+			pstm.setString(3, catador.getComplementoCatador());
+			pstm.setString(4, catador.getEmailCatador());
+			pstm.setString(5, catador.getTelefoneCatador());
+			pstm.setString(6, catador.getTipoResiduoColetado());
+			pstm.setString(7, catador.getDiaSemanaEmQueColeta());
+			pstm.setString(8, catador.getRotas());
+			pstm.setString(9, catador.getNomeCatador());
+			pstm.execute();
+			
+		}catch(Exception e) {
+			
+			e.printStackTrace();
+			
+		} finally {
+			try {
+				if (pstm != null) {
+					pstm.close();
+				}
+				
+				if (con != null) {
+					con.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+
+		
+	}
+
+	public ArrayList<CatadorModel> consultar(String nome) {
+		
+		ResultSet rs = null;
+		Connection con = null;
+		PreparedStatement pstm = null;
+		ArrayList<CatadorModel> catadores = null;
+		
+		try {
+			String sql = "SELECT * FROM catador WHERE nome = ?";
+			con = ConexaoBD.getConnection();
+			pstm = con.prepareStatement(sql);
+			pstm.setString(1, nome);
+			rs = pstm.executeQuery();
+			
+			if(rs != null) {
+				catadores = new ArrayList<CatadorModel>();
+				
+				while(rs.next()) {
+					CatadorModel catador = new CatadorModel();
+					catador.setNomeCatador(rs.getString("nome"));
+					catador.setEnderecoCatador(rs.getString("endereco"));
+					catador.setNumeroCatador(rs.getString("numero"));
+					catador.setComplementoCatador(rs.getString("complemento"));
+					catador.setEmailCatador(rs.getString("email"));
+					catador.setTelefoneCatador(rs.getString("telefone"));
+					catador.setTipoResiduoColetado(rs.getString("tiporesiduo"));
+					catador.setDiaSemanaEmQueColeta(rs.getString("diasemana"));
+					catador.setRotas(rs.getString("rotas"));
+					catadores.add(catador);
+				}
+				
+				
+			}
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return catadores;
 	}
 
 }

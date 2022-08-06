@@ -298,7 +298,7 @@ public class TelaAtualizaInteressado extends JFrame {
 					diaSemana += "Sábado; ";
 				}
 				
-				interessado.incluir(txtNome.getText(), txtEndereco.getText(), txtNumero.getText(), txtComplemento.getText(), txtEmail.getText(), txtTelefone.getText(), tipoResiduo, diaSemana);
+				interessado.alterar(txtNome.getText(), txtEndereco.getText(), txtNumero.getText(), txtComplemento.getText(), txtEmail.getText(), txtTelefone.getText(), tipoResiduo, diaSemana);
 			}
 		});
 		

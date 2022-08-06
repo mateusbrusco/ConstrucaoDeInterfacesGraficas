@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -13,6 +14,9 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import aplicacao.controller.CatadorController;
+import aplicacao.controller.InteressadoController;
+import aplicacao.model.CatadorModel;
+import aplicacao.model.InteressadoModel;
 
 public class TelaAtualizaCatador extends JFrame {
 	
@@ -284,7 +288,7 @@ public class TelaAtualizaCatador extends JFrame {
 		
 		
 		btnAtualizar.setFont(new Font("Arial", Font.PLAIN, 14));
-		btnAtualizar.setBounds(10, 530, 100, 37);
+		btnAtualizar.setBounds(10, 602, 100, 37);
 	
 		btnLimpar.setFont(new Font("Arial", Font.PLAIN, 14));
 		btnLimpar.setBounds(230, 602, 100, 37);
@@ -359,6 +363,114 @@ public class TelaAtualizaCatador extends JFrame {
 		});
 		
 	
+
+		btnBuscar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String nome = txtNome.getText();
+				CatadorController CatadorController = new CatadorController();
+				
+				try {
+					ArrayList<CatadorModel> catadores = CatadorController.consultar(nome);
+					
+					catadores.forEach((CatadorModel catador) -> {
+						txtEndereco.setText(catador.getEnderecoCatador());
+						txtNumero.setText(catador.getNumeroCatador());
+						txtComplemento.setText(catador.getComplementoCatador());
+						txtEmail.setText(catador.getEmailCatador());
+						txtTelefone.setText(catador.getTelefoneCatador());
+						
+						if(catador.getTipoResiduoColetado().contains("Papel")) {
+							chckbxPapel.setSelected(true);
+						}
+						if(catador.getTipoResiduoColetado().contains("Plástico")) {
+							chckbxPlastico.setSelected(true);
+						}
+						if(catador.getTipoResiduoColetado().contains("Vidro")) {
+							chckbxVidro.setSelected(true);
+						}
+						if(catador.getTipoResiduoColetado().contains("Metal")) {
+							chckbxMetal.setSelected(true);
+						}
+						if(catador.getTipoResiduoColetado().contains("Orgânico")) {
+							chckbxOrganico.setSelected(true);
+						}
+						
+						if(catador.getDiaSemanaEmQueColeta().contains("Segunda")) {
+							chckbxSegunda.setSelected(true);
+						}
+						if(catador.getDiaSemanaEmQueColeta().contains("Terça")) {
+							chckbxTerca.setSelected(true);
+						}
+						if(catador.getDiaSemanaEmQueColeta().contains("Quarta")) {
+							chckbxQuarta.setSelected(true);
+						}
+						if(catador.getDiaSemanaEmQueColeta().contains("Quinta")) {
+							chckbxQuinta.setSelected(true);
+						}
+						if(catador.getDiaSemanaEmQueColeta().contains("Sexta")) {
+							chckbxSexta.setSelected(true);
+						}
+						if(catador.getDiaSemanaEmQueColeta().contains("Sábado")) {
+							chckbxSabado.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 1")) {
+							chckbxRota1.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 2")) {
+							chckbxRota2.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 3")) {
+							chckbxRota3.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 4")) {
+							chckbxRota4.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 5")) {
+							chckbxRota5.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 6")) {
+							chckbxRota6.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 7")) {
+							chckbxRota7.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 8")) {
+							chckbxRota8.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 9")) {
+							chckbxRota9.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 10")) {
+							chckbxRota10.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 11")) {
+							chckbxRota11.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 12")) {
+							chckbxRota12.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 13")) {
+							chckbxRota13.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 14")) {
+							chckbxRota14.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 15")) {
+							chckbxRota15.setSelected(true);
+						}
+
+					});
+					
+				} catch(Exception x) {
+					
+					x.printStackTrace();
+					
+				}
+				
+			}
+		});
+
+
 		btnAtualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -443,10 +555,11 @@ public class TelaAtualizaCatador extends JFrame {
 				if(chckbxRota15.isSelected()) {
 					rotas += "Rota 15; ";
 				}
-				catador.incluir(txtNome.getText(), txtEndereco.getText(), txtNumero.getText(), txtComplemento.getText(), txtEmail.getText(), txtTelefone.getText(), tipoResiduo, diaSemana, rotas);
+
+				catador.alterar(txtNome.getText(), txtEndereco.getText(), txtNumero.getText(), txtComplemento.getText(), txtEmail.getText(), txtTelefone.getText(), tipoResiduo, diaSemana, rotas);
 			}
 		});
-		
+
 		
 		
 	}
