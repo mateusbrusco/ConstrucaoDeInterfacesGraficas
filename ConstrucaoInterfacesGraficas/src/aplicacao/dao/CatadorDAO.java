@@ -53,6 +53,36 @@ public class CatadorDAO {
 	
 	public void excluir(CatadorModel catador) {
 		
+		String sql = "DELETE FROM catador WHERE nome = ?";
+		Connection con = null;
+		PreparedStatement pstm = null;
+		
+		try {
+			con = ConexaoBD.getConnection();
+			
+			pstm = con.prepareStatement(sql);
+			pstm.setString(1, catador.getNomeCatador());		
+			pstm.execute();
+			
+		}catch(Exception e) {
+			
+			e.printStackTrace();
+			
+		} finally {
+			try {
+				if (pstm != null) {
+					pstm.close();
+				}
+				
+				if (con != null) {
+					con.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		
 	}
 	
 	public void alterar(CatadorModel catador) {

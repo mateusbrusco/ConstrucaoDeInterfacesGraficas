@@ -1,5 +1,11 @@
 package aplicacao.view;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -7,16 +13,12 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import aplicacao.controller.CatadorController;
 import aplicacao.controller.InteressadoController;
+import aplicacao.model.CatadorModel;
 import aplicacao.model.InteressadoModel;
 
-import java.awt.Font;
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-
-public class TelaExcluiInteressado extends JFrame {
+public class TelaExcluiCatador extends JFrame {
 	
 	private JLabel lblTitulo;
 	private JLabel lblNome;
@@ -27,6 +29,7 @@ public class TelaExcluiInteressado extends JFrame {
 	private JLabel lblTelefone;
 	private JLabel lblTipoResiduo;
 	private JLabel lblDiaSemana;
+	private JLabel lblRota;
 	
 	private JTextField txtNome;
 	private JTextField txtEndereco;
@@ -46,16 +49,32 @@ public class TelaExcluiInteressado extends JFrame {
 	private JCheckBox chckbxQuinta;
 	private JCheckBox chckbxSexta;
 	private JCheckBox chckbxSabado;
+	private JCheckBox chckbxRota1;
+	private JCheckBox chckbxRota2;
+	private JCheckBox chckbxRota3;
+	private JCheckBox chckbxRota4;
+	private JCheckBox chckbxRota5;
+	private JCheckBox chckbxRota6;
+	private JCheckBox chckbxRota7;
+	private JCheckBox chckbxRota8;
+	private JCheckBox chckbxRota9;
+	private JCheckBox chckbxRota10;
+	private JCheckBox chckbxRota11;
+	private JCheckBox chckbxRota12;
+	private JCheckBox chckbxRota13;
+	private JCheckBox chckbxRota14;
+	private JCheckBox chckbxRota15;
+	
+	private CatadorController catador;
+	
 	
 	private JButton btnExcluir;
 	private JButton btnLimpar;
 	private JButton btnVoltar;
 	private JButton btnBuscar;
 	
-	private InteressadoController interessado;
 	
-	
-	public TelaExcluiInteressado() {
+	public TelaExcluiCatador() {
 		
 		criarComponentes();
 		configurarComponentes();
@@ -65,8 +84,8 @@ public class TelaExcluiInteressado extends JFrame {
 	}
 	
 	private void criarComponentes() {
-		interessado = new InteressadoController();
-		lblTitulo = new JLabel("EXCLUI CADASTRO DE INTERESSADO(A)");
+		catador = new CatadorController();
+		lblTitulo = new JLabel("EXCLUI CADASTRO DE CATADOR(A)");
 		lblNome = new JLabel("Nome: ");
 		lblEndereco = new JLabel("Endereço: ");
 		lblNumero = new JLabel("Número: ");
@@ -75,6 +94,7 @@ public class TelaExcluiInteressado extends JFrame {
 		lblTelefone = new JLabel("Telefone: ");
 		lblTipoResiduo = new JLabel("<html>Tipos de\n Resíduos:</html>");
 		lblDiaSemana = new JLabel("<html>Dias da\n Semana:</html>");
+		lblRota = new JLabel("<html>Rotas\n Atendidas:</html>");
 		
 		txtNome = new JTextField(20);
 		txtEndereco = new JTextField(50);
@@ -94,18 +114,34 @@ public class TelaExcluiInteressado extends JFrame {
 		chckbxQuinta = new JCheckBox("Quinta-feira");
 		chckbxSexta = new JCheckBox("Sexta-feira");
 		chckbxSabado = new JCheckBox("Sábado");
+		chckbxRota1 = new JCheckBox("Rota 1");
+		chckbxRota2 = new JCheckBox("Rota 2");
+		chckbxRota3 = new JCheckBox("Rota 3");
+		chckbxRota4 = new JCheckBox("Rota 4");
+		chckbxRota5 = new JCheckBox("Rota 5");
+		chckbxRota6 = new JCheckBox("Rota 6");
+		chckbxRota7 = new JCheckBox("Rota 7");
+		chckbxRota8 = new JCheckBox("Rota 8");
+		chckbxRota9 = new JCheckBox("Rota 9");
+		chckbxRota10 = new JCheckBox("Rota 10");
+		chckbxRota11 = new JCheckBox("Rota 11");
+		chckbxRota12 = new JCheckBox("Rota 12");
+		chckbxRota13 = new JCheckBox("Rota 13");
+		chckbxRota14 = new JCheckBox("Rota 14");
+		chckbxRota15 = new JCheckBox("Rota 15");
 		
 		btnExcluir = new JButton("Excluir");
 		btnLimpar = new JButton("Limpar");
 		btnVoltar = new JButton("Voltar");
 		btnBuscar = new JButton("Buscar");
+		
 	}
 	
 	private void configurarComponentes() {
 		
 		getContentPane().setLayout(null);
 		this.setSize(800, 700);
-		this.setTitle("Exclui Cadastro de Interessado(a)");
+		this.setTitle("Exclui Cadastro de Catador(a)");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		
@@ -148,6 +184,10 @@ public class TelaExcluiInteressado extends JFrame {
 		lblDiaSemana.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblDiaSemana.setBounds(247, 265, 69, 43);
 		
+		lblRota.setFont(new Font("Arial", Font.PLAIN, 14));
+		lblRota.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblRota.setBounds(10, 414, 69, 43);
+		
 		
 		txtNome.setFont(new Font("Arial", Font.PLAIN, 14));
 		txtNome.setBounds(89, 99, 348, 20);
@@ -166,6 +206,7 @@ public class TelaExcluiInteressado extends JFrame {
 		
 		txtTelefone.setFont(new Font("Arial", Font.PLAIN, 14));
 		txtTelefone.setBounds(89, 223, 348, 20);
+		
 		
 		chckbxPapel.setFont(new Font("Arial", Font.PLAIN, 14));
 		chckbxPapel.setBounds(89, 268, 75, 20);
@@ -200,17 +241,63 @@ public class TelaExcluiInteressado extends JFrame {
 		chckbxSabado.setFont(new Font("Arial", Font.PLAIN, 14));
 		chckbxSabado.setBounds(322, 368, 115, 20);
 		
+		chckbxRota1.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota1.setBounds(89, 414, 115, 20);
+		
+		chckbxRota2.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota2.setBounds(89, 434, 115, 20);
+		
+		chckbxRota3.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota3.setBounds(89, 454, 115, 20);
+		
+		chckbxRota4.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota4.setBounds(89, 474, 115, 20);
+		
+		chckbxRota5.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota5.setBounds(89, 494, 115, 20);
+		
+		chckbxRota6.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota6.setBounds(223, 414, 75, 20);
+		
+		chckbxRota7.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota7.setBounds(223, 434, 75, 20);
+		
+		chckbxRota8.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota8.setBounds(223, 454, 75, 20);
+		
+		chckbxRota9.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota9.setBounds(223, 474, 75, 20);
+		
+		chckbxRota10.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota10.setBounds(223, 494, 75, 20);
+		
+		chckbxRota11.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota11.setBounds(362, 414, 75, 20);
+		
+		chckbxRota12.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota12.setBounds(362, 434, 75, 20);
+		
+		chckbxRota13.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota13.setBounds(362, 454, 75, 20);
+		
+		chckbxRota14.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota14.setBounds(362, 474, 75, 20);
+		
+		chckbxRota15.setFont(new Font("Arial", Font.PLAIN, 14));
+		chckbxRota15.setBounds(362, 494, 75, 20);
+		
+		
 		btnExcluir.setFont(new Font("Arial", Font.PLAIN, 14));
-		btnExcluir.setBounds(10, 468, 100, 37);
-				
+		btnExcluir.setBounds(10, 602, 100, 37);
+	
 		btnLimpar.setFont(new Font("Arial", Font.PLAIN, 14));
-		btnLimpar.setBounds(230, 468, 100, 37);
+		btnLimpar.setBounds(230, 602, 100, 37);
 		
 		btnVoltar.setFont(new Font("Arial", Font.PLAIN, 14));
-		btnVoltar.setBounds(340, 468, 100, 37);
+		btnVoltar.setBounds(340, 602, 100, 37);
 		
 		btnBuscar.setFont(new Font("Arial", Font.PLAIN, 14));
-		btnBuscar.setBounds(120, 468, 100, 37);
+		btnBuscar.setBounds(120, 602, 100, 37);
 		
 	}
 	
@@ -242,6 +329,22 @@ public class TelaExcluiInteressado extends JFrame {
 		getContentPane().add(chckbxQuinta);
 		getContentPane().add(chckbxSexta);
 		getContentPane().add(chckbxSabado);
+		getContentPane().add(chckbxRota1);
+		getContentPane().add(chckbxRota2);
+		getContentPane().add(chckbxRota3);
+		getContentPane().add(chckbxRota4);
+		getContentPane().add(chckbxRota5);
+		getContentPane().add(chckbxRota6);
+		getContentPane().add(chckbxRota7);
+		getContentPane().add(chckbxRota8);
+		getContentPane().add(chckbxRota9);
+		getContentPane().add(chckbxRota10);
+		getContentPane().add(chckbxRota11);
+		getContentPane().add(chckbxRota12);
+		getContentPane().add(chckbxRota13);
+		getContentPane().add(chckbxRota14);
+		getContentPane().add(chckbxRota15);
+		getContentPane().add(lblRota);
 		getContentPane().add(btnExcluir);
 		getContentPane().add(btnLimpar);
 		getContentPane().add(btnVoltar);
@@ -259,63 +362,103 @@ public class TelaExcluiInteressado extends JFrame {
 			}
 		});
 		
-		btnExcluir.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				interessado.excluir(txtNome.getText());
-			}
-		});
-		
-		
+	
+
 		btnBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String nome = txtNome.getText();
-				InteressadoController interessadoController = new InteressadoController();
+				CatadorController CatadorController = new CatadorController();
 				
 				try {
-					ArrayList<InteressadoModel> interessados = interessadoController.consultar(nome);
+					ArrayList<CatadorModel> catadores = CatadorController.consultar(nome);
 					
-					interessados.forEach((InteressadoModel interessado) -> {
-						txtEndereco.setText(interessado.getEnderecoInteressado());
-						txtNumero.setText(interessado.getNumeroInteressado());
-						txtComplemento.setText(interessado.getComplementoInteressado());
-						txtEmail.setText(interessado.getEmailInteressado());
-						txtTelefone.setText(interessado.getTelefoneInteressado());
+					catadores.forEach((CatadorModel catador) -> {
+						txtEndereco.setText(catador.getEnderecoCatador());
+						txtNumero.setText(catador.getNumeroCatador());
+						txtComplemento.setText(catador.getComplementoCatador());
+						txtEmail.setText(catador.getEmailCatador());
+						txtTelefone.setText(catador.getTelefoneCatador());
 						
-						if(interessado.getTipoResiduoInteressado().contains("Papel")) {
+						if(catador.getTipoResiduoColetado().contains("Papel")) {
 							chckbxPapel.setSelected(true);
 						}
-						if(interessado.getTipoResiduoInteressado().contains("Plástico")) {
+						if(catador.getTipoResiduoColetado().contains("Plástico")) {
 							chckbxPlastico.setSelected(true);
 						}
-						if(interessado.getTipoResiduoInteressado().contains("Vidro")) {
+						if(catador.getTipoResiduoColetado().contains("Vidro")) {
 							chckbxVidro.setSelected(true);
 						}
-						if(interessado.getTipoResiduoInteressado().contains("Metal")) {
+						if(catador.getTipoResiduoColetado().contains("Metal")) {
 							chckbxMetal.setSelected(true);
 						}
-						if(interessado.getTipoResiduoInteressado().contains("Orgânico")) {
+						if(catador.getTipoResiduoColetado().contains("Orgânico")) {
 							chckbxOrganico.setSelected(true);
 						}
 						
-						if(interessado.getDiaSemanaInteressado().contains("Segunda")) {
+						if(catador.getDiaSemanaEmQueColeta().contains("Segunda")) {
 							chckbxSegunda.setSelected(true);
 						}
-						if(interessado.getDiaSemanaInteressado().contains("Terça")) {
+						if(catador.getDiaSemanaEmQueColeta().contains("Terça")) {
 							chckbxTerca.setSelected(true);
 						}
-						if(interessado.getDiaSemanaInteressado().contains("Quarta")) {
+						if(catador.getDiaSemanaEmQueColeta().contains("Quarta")) {
 							chckbxQuarta.setSelected(true);
 						}
-						if(interessado.getDiaSemanaInteressado().contains("Quinta")) {
+						if(catador.getDiaSemanaEmQueColeta().contains("Quinta")) {
 							chckbxQuinta.setSelected(true);
 						}
-						if(interessado.getDiaSemanaInteressado().contains("Sexta")) {
+						if(catador.getDiaSemanaEmQueColeta().contains("Sexta")) {
 							chckbxSexta.setSelected(true);
 						}
-						if(interessado.getDiaSemanaInteressado().contains("Sábado")) {
+						if(catador.getDiaSemanaEmQueColeta().contains("Sábado")) {
 							chckbxSabado.setSelected(true);
 						}
+						if(catador.getRotas().contains("Rota 1")) {
+							chckbxRota1.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 2")) {
+							chckbxRota2.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 3")) {
+							chckbxRota3.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 4")) {
+							chckbxRota4.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 5")) {
+							chckbxRota5.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 6")) {
+							chckbxRota6.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 7")) {
+							chckbxRota7.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 8")) {
+							chckbxRota8.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 9")) {
+							chckbxRota9.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 10")) {
+							chckbxRota10.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 11")) {
+							chckbxRota11.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 12")) {
+							chckbxRota12.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 13")) {
+							chckbxRota13.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 14")) {
+							chckbxRota14.setSelected(true);
+						}
+						if(catador.getRotas().contains("Rota 15")) {
+							chckbxRota15.setSelected(true);
+						}
+
 					});
 					
 				} catch(Exception x) {
@@ -324,6 +467,14 @@ public class TelaExcluiInteressado extends JFrame {
 					
 				}
 				
+			}
+		});
+
+
+		btnExcluir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				catador.excluir(txtNome.getText());
 			}
 		});
 		
@@ -347,10 +498,29 @@ public class TelaExcluiInteressado extends JFrame {
 				chckbxQuinta.setSelected(false);
 				chckbxSexta.setSelected(false);
 				chckbxSabado.setSelected(false);
+				chckbxRota1.setSelected(false);
+				chckbxRota2.setSelected(false);
+				chckbxRota3.setSelected(false);
+				chckbxRota4.setSelected(false);
+				chckbxRota5.setSelected(false);
+				chckbxRota5.setSelected(false);
+				chckbxRota6.setSelected(false);
+				chckbxRota7.setSelected(false);
+				chckbxRota8.setSelected(false);
+				chckbxRota9.setSelected(false);
+				chckbxRota10.setSelected(false);
+				chckbxRota11.setSelected(false);
+				chckbxRota12.setSelected(false);
+				chckbxRota13.setSelected(false);
+				chckbxRota14.setSelected(false);
+				chckbxRota15.setSelected(false);
 			}
 		});
 
+
+		
 		
 	}
+
 
 }

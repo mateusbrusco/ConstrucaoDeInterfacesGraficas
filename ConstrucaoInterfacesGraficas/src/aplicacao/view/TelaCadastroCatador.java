@@ -445,6 +445,45 @@ public class TelaCadastroCatador extends JFrame {
 			}
 		});
 		
+		btnLimpar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				txtNome.setText("");
+				txtEndereco.setText("");
+				txtNumero.setText("");
+				txtComplemento.setText("");
+				txtEmail.setText("");
+				txtTelefone.setText("");
+				chckbxPapel.setSelected(false);
+				chckbxPlastico.setSelected(false);
+				chckbxVidro.setSelected(false);
+				chckbxMetal.setSelected(false);
+				chckbxOrganico.setSelected(false);
+				chckbxSegunda.setSelected(false);
+				chckbxTerca.setSelected(false);
+				chckbxQuarta.setSelected(false);
+				chckbxQuinta.setSelected(false);
+				chckbxSexta.setSelected(false);
+				chckbxSabado.setSelected(false);
+				chckbxRota1.setSelected(false);
+				chckbxRota2.setSelected(false);
+				chckbxRota3.setSelected(false);
+				chckbxRota4.setSelected(false);
+				chckbxRota5.setSelected(false);
+				chckbxRota5.setSelected(false);
+				chckbxRota6.setSelected(false);
+				chckbxRota7.setSelected(false);
+				chckbxRota8.setSelected(false);
+				chckbxRota9.setSelected(false);
+				chckbxRota10.setSelected(false);
+				chckbxRota11.setSelected(false);
+				chckbxRota12.setSelected(false);
+				chckbxRota13.setSelected(false);
+				chckbxRota14.setSelected(false);
+				chckbxRota15.setSelected(false);
+			}
+		});
+		
 	}
 
 

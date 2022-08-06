@@ -17,7 +17,7 @@ public class TelaPrincipal extends JFrame {
 	private Image imgReciclagem;
 	static JMenuBar barraMenu;
 	static JMenu interessado, catador, rota;
-	static JMenuItem cadastraInteressado, alteraInteressado, buscaInteressado, removeInteressado, cadastraCatador, alteraCatador, buscaCatador, removeCatador;
+	static JMenuItem cadastraInteressado, buscaInteressado, removeInteressado, cadastraCatador, buscaCatador, removeCatador;
 	
 	
 	public TelaPrincipal () {
@@ -35,13 +35,11 @@ public class TelaPrincipal extends JFrame {
 		rota = new JMenu("Rota");
 		
 		cadastraInteressado = new JMenuItem("Cadastro de interessado(a)");
-		alteraInteressado = new JMenuItem("Alteração de cadastro de interessado(a)");
-		buscaInteressado = new JMenuItem("Busca de interessado(a) cadastrado");
+		buscaInteressado = new JMenuItem("Busca e altera e interessado(a) cadastrado");
 		removeInteressado = new JMenuItem("Exclusão de cadastro de interessado(a)");
 		
 		cadastraCatador = new JMenuItem("Cadastro de catador(a)");
-		alteraCatador = new JMenuItem("Alteração de cadastro de catador(a)");
-		buscaCatador = new JMenuItem("Busca de catador(a) cadastrado");
+		buscaCatador = new JMenuItem("Busca e altera catador(a) cadastrado");
 		removeCatador = new JMenuItem("Exclusão de cadastro de catador(a)");
 		
 	}
@@ -63,12 +61,10 @@ public class TelaPrincipal extends JFrame {
 		getContentPane().add(lblTela);
 		
 		interessado.add(cadastraInteressado);
-		interessado.add(alteraInteressado);
 		interessado.add(buscaInteressado);
 		interessado.add(removeInteressado);
 		
 		catador.add(cadastraCatador);
-		catador.add(alteraCatador);
 		catador.add(buscaCatador);
 		catador.add(removeCatador);
 		
@@ -120,6 +116,14 @@ public class TelaPrincipal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				TelaExcluiInteressado excluiInteressado = new TelaExcluiInteressado();
 				excluiInteressado.setVisible(true);
+				dispose();
+			}
+		});
+		
+		removeCatador.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaExcluiCatador excluiCatador = new TelaExcluiCatador();
+				excluiCatador.setVisible(true);
 				dispose();
 			}
 		});

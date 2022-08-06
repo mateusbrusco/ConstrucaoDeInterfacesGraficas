@@ -363,6 +363,30 @@ public class TelaAtualizaInteressado extends JFrame {
 			}
 		});
 		
+		btnLimpar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				txtNome.setText("");
+				txtEndereco.setText("");
+				txtNumero.setText("");
+				txtComplemento.setText("");
+				txtEmail.setText("");
+				txtTelefone.setText("");
+				chckbxPapel.setSelected(false);
+				chckbxPlastico.setSelected(false);
+				chckbxVidro.setSelected(false);
+				chckbxMetal.setSelected(false);
+				chckbxOrganico.setSelected(false);
+				chckbxSegunda.setSelected(false);
+				chckbxTerca.setSelected(false);
+				chckbxQuarta.setSelected(false);
+				chckbxQuinta.setSelected(false);
+				chckbxSexta.setSelected(false);
+				chckbxSabado.setSelected(false);
+			}
+		});
+
+		
 	}
 
 }
