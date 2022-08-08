@@ -17,7 +17,7 @@ public class TelaPrincipal extends JFrame {
 	private Image imgReciclagem;
 	static JMenuBar barraMenu;
 	static JMenu interessado, catador, rota;
-	static JMenuItem cadastraInteressado, buscaInteressado, removeInteressado, cadastraCatador, buscaCatador, removeCatador;
+	static JMenuItem cadastraInteressado, buscaInteressado, removeInteressado, cadastraCatador, buscaCatador, removeCatador, controleRota;
 	
 	
 	public TelaPrincipal () {
@@ -41,6 +41,8 @@ public class TelaPrincipal extends JFrame {
 		cadastraCatador = new JMenuItem("Cadastro de catador(a)");
 		buscaCatador = new JMenuItem("Busca e altera catador(a) cadastrado");
 		removeCatador = new JMenuItem("Exclusão de cadastro de catador(a)");
+		
+		controleRota = new JMenuItem("Controle de Rota");
 		
 	}
 	
@@ -71,6 +73,8 @@ public class TelaPrincipal extends JFrame {
 		barraMenu.add(interessado);
 		barraMenu.add(catador);
 		barraMenu.add(rota);
+		
+		rota.add(controleRota);
 		
 		this.setJMenuBar(barraMenu);
 
@@ -128,6 +132,13 @@ public class TelaPrincipal extends JFrame {
 			}
 		});
 		
+		controleRota.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaControleRota controleRota = new TelaControleRota();
+				controleRota.setVisible(true);
+				dispose();
+			}
+		});
 		
 	}
 
