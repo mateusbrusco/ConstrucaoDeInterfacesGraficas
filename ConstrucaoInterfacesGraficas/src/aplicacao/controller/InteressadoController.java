@@ -16,7 +16,7 @@ public class InteressadoController {
 	}
 	
 	
-	public void incluir(String nomeInteressado, String enderecoInteressado, String numeroInteressado, String complementoInteressado, String emailInteressado, String telefoneInteressado, String tipoResiduoInteressado, String diaSemanaInteressado) {
+	public void incluir(String nomeInteressado, String enderecoInteressado, String numeroInteressado, String complementoInteressado, String emailInteressado, String telefoneInteressado, String tipoResiduoInteressado, String diaSemanaInteressado, String latitude, String Longitude) {
 		interessado = new InteressadoModel();
 		interessado.setNomeInteressado(nomeInteressado);
 		interessado.setEnderecoInteressado(enderecoInteressado);
@@ -26,6 +26,8 @@ public class InteressadoController {
 		interessado.setTelefoneInteressado(telefoneInteressado);
 		interessado.setDiaSemanaInteressado(diaSemanaInteressado);
 		interessado.setTipoResiduoInteressado(tipoResiduoInteressado);
+		interessado.setLatitudeInteressado(latitude);
+		interessado.setLongitudeInteressado(Longitude);
 		interessadoDAO.incluir(interessado);
 	}
 	

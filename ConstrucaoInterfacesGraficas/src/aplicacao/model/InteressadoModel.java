@@ -14,7 +14,25 @@ public class InteressadoModel {
 	private String telefoneInteressado;
 	private String tipoResiduoInteressado;
 	private String diaSemanaInteressado;
+	private String latitudeInteressado;
+	private String longitudeInteressado;
 	
+	public String getLatitudeInteressado() {
+		return latitudeInteressado;
+	}
+
+	public void setLatitudeInteressado(String latitudeInteressado) {
+		this.latitudeInteressado = latitudeInteressado;
+	}
+
+	public String getLongitudeInteressado() {
+		return longitudeInteressado;
+	}
+
+	public void setLongitudeInteressado(String longitudeInteressado) {
+		this.longitudeInteressado = longitudeInteressado;
+	}
+
 	public InteressadoModel () {
 		super();
 	}

@@ -4,6 +4,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
@@ -263,6 +264,7 @@ public class TelaExcluiInteressado extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				interessado.excluir(txtNome.getText());
+				JOptionPane.showMessageDialog(TelaExcluiInteressado.this, "Interessado excluído com sucesso!");
 			}
 		});
 		

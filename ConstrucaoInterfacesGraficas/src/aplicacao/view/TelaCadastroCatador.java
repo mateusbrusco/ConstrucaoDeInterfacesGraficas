@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
@@ -442,6 +443,7 @@ public class TelaCadastroCatador extends JFrame {
 					rotas += "Rota 15; ";
 				}
 				catador.incluir(txtNome.getText(), txtEndereco.getText(), txtNumero.getText(), txtComplemento.getText(), txtEmail.getText(), txtTelefone.getText(), tipoResiduo, diaSemana, rotas);
+				JOptionPane.showMessageDialog(TelaCadastroCatador.this, "Catador cadastrado com sucesso!");
 			}
 		});
 		

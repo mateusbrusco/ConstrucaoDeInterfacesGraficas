@@ -4,6 +4,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
@@ -25,6 +26,8 @@ public class TelaCadastroInteressado extends JFrame {
 	private JLabel lblTelefone;
 	private JLabel lblTipoResiduo;
 	private JLabel lblDiaSemana;
+	private JLabel lblLatitude;
+	private JLabel lblLongitude;
 	
 	private JTextField txtNome;
 	private JTextField txtEndereco;
@@ -32,6 +35,8 @@ public class TelaCadastroInteressado extends JFrame {
 	private JTextField txtComplemento;
 	private JTextField txtEmail;
 	private JTextField txtTelefone;
+	private JTextField txtLatitude;
+	private JTextField txtLongitude;
 	
 	private JCheckBox chckbxPapel;
 	private JCheckBox chckbxPlastico;
@@ -72,6 +77,8 @@ public class TelaCadastroInteressado extends JFrame {
 		lblTelefone = new JLabel("Telefone: ");
 		lblTipoResiduo = new JLabel("<html>Tipos de\n Resíduos:</html>");
 		lblDiaSemana = new JLabel("<html>Dias da\n Semana:</html>");
+		lblLatitude = new JLabel("Latitude: ");
+		lblLongitude = new JLabel("Longitude: ");
 		
 		txtNome = new JTextField(20);
 		txtEndereco = new JTextField(50);
@@ -79,6 +86,8 @@ public class TelaCadastroInteressado extends JFrame {
 		txtComplemento = new JTextField(20);
 		txtEmail = new JTextField(20);
 		txtTelefone = new JTextField(10);
+		txtLatitude = new JTextField(20);
+		txtLongitude = new JTextField(20);
 		
 		chckbxPapel = new JCheckBox("Papel");
 		chckbxPlastico = new JCheckBox("Plástico");
@@ -139,11 +148,19 @@ public class TelaCadastroInteressado extends JFrame {
 		
 		lblTipoResiduo.setFont(new Font("Arial", Font.PLAIN, 14));
 		lblTipoResiduo.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblTipoResiduo.setBounds(10, 265, 69, 43);
+		lblTipoResiduo.setBounds(10, 322, 69, 43);
 		
 		lblDiaSemana.setFont(new Font("Arial", Font.PLAIN, 14));
 		lblDiaSemana.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblDiaSemana.setBounds(247, 265, 69, 43);
+		lblDiaSemana.setBounds(247, 322, 69, 43);
+		
+		lblLatitude.setFont(new Font("Arial", Font.PLAIN, 14));
+		lblLatitude.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblLatitude.setBounds(10, 265, 69, 20);
+		
+		lblLongitude.setFont(new Font("Arial", Font.PLAIN, 14));
+		lblLongitude.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblLongitude.setBounds(214, 260, 83, 30);
 		
 		
 		txtNome.setFont(new Font("Arial", Font.PLAIN, 14));
@@ -164,41 +181,47 @@ public class TelaCadastroInteressado extends JFrame {
 		txtTelefone.setFont(new Font("Arial", Font.PLAIN, 14));
 		txtTelefone.setBounds(89, 223, 348, 20);
 		
+		txtLatitude.setFont(new Font("Arial", Font.PLAIN, 14));
+		txtLatitude.setBounds(89, 265, 115, 20);
+		
+		txtLongitude.setFont(new Font("Arial", Font.PLAIN, 14));
+		txtLongitude.setBounds(307, 265, 130, 20);
+		
 		chckbxPapel.setFont(new Font("Arial", Font.PLAIN, 14));
-		chckbxPapel.setBounds(89, 268, 75, 20);
+		chckbxPapel.setBounds(89, 325, 75, 20);
 		
 		chckbxPlastico.setFont(new Font("Arial", Font.PLAIN, 14));
-		chckbxPlastico.setBounds(89, 288, 75, 20);
+		chckbxPlastico.setBounds(89, 345, 75, 20);
 		
 		chckbxVidro.setFont(new Font("Arial", Font.PLAIN, 14));
-		chckbxVidro.setBounds(89, 308, 75, 20);
+		chckbxVidro.setBounds(89, 365, 75, 20);
 		
 		chckbxMetal.setFont(new Font("Arial", Font.PLAIN, 14));
-		chckbxMetal.setBounds(89, 328, 75, 20);
+		chckbxMetal.setBounds(89, 385, 75, 20);
 		
 		chckbxOrganico.setFont(new Font("Arial", Font.PLAIN, 14));
-		chckbxOrganico.setBounds(89, 348, 95, 20);
+		chckbxOrganico.setBounds(89, 405, 95, 20);
 		
 		chckbxSegunda.setFont(new Font("Arial", Font.PLAIN, 14));
-		chckbxSegunda.setBounds(322, 268, 115, 20);
+		chckbxSegunda.setBounds(322, 325, 115, 20);
 		
 		chckbxTerca.setFont(new Font("Arial", Font.PLAIN, 14));
-		chckbxTerca.setBounds(322, 288, 115, 20);
+		chckbxTerca.setBounds(322, 345, 115, 20);
 		
 		chckbxQuarta.setFont(new Font("Arial", Font.PLAIN, 14));
-		chckbxQuarta.setBounds(322, 308, 115, 20);
+		chckbxQuarta.setBounds(322, 365, 115, 20);
 		
 		chckbxQuinta.setFont(new Font("Arial", Font.PLAIN, 14));
-		chckbxQuinta.setBounds(322, 328, 115, 20);
+		chckbxQuinta.setBounds(322, 385, 115, 20);
 		
 		chckbxSexta.setFont(new Font("Arial", Font.PLAIN, 14));
-		chckbxSexta.setBounds(322, 348, 115, 20);
+		chckbxSexta.setBounds(322, 405, 115, 20);
 		
 		chckbxSabado.setFont(new Font("Arial", Font.PLAIN, 14));
-		chckbxSabado.setBounds(322, 368, 115, 20);
+		chckbxSabado.setBounds(322, 425, 115, 20);
 		
 		btnCadastrar.setFont(new Font("Arial", Font.PLAIN, 14));
-		btnCadastrar.setBounds(10, 468, 100, 37);
+		btnCadastrar.setBounds(10, 540, 100, 37);
 		
 		btnCadastrar.setFont(new Font("Arial", Font.PLAIN, 14));
 		btnCadastrar.setBounds(10, 468, 100, 37);
@@ -242,7 +265,10 @@ public class TelaCadastroInteressado extends JFrame {
 		getContentPane().add(btnCadastrar);
 		getContentPane().add(btnLimpar);
 		getContentPane().add(btnVoltar);
-		
+		getContentPane().add(lblLatitude);
+		getContentPane().add(lblLongitude);
+		getContentPane().add(txtLatitude);
+		getContentPane().add(txtLongitude);
 		
 	}
 	
@@ -295,7 +321,8 @@ public class TelaCadastroInteressado extends JFrame {
 					diaSemana += "Sábado; ";
 				}
 				
-				interessado.incluir(txtNome.getText(), txtEndereco.getText(), txtNumero.getText(), txtComplemento.getText(), txtEmail.getText(), txtTelefone.getText(), tipoResiduo, diaSemana);
+				interessado.incluir(txtNome.getText(), txtEndereco.getText(), txtNumero.getText(), txtComplemento.getText(), txtEmail.getText(), txtTelefone.getText(), tipoResiduo, diaSemana, txtLatitude.getText(), txtLongitude.getText());
+				JOptionPane.showMessageDialog(TelaCadastroInteressado.this, "Interessado cadastrado com sucesso!");
 			}
 		});
 		

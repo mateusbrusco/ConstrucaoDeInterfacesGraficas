@@ -11,7 +11,7 @@ public class InteressadoDAO {
 	
 	public void incluir(InteressadoModel interessado) {
 		
-		String sql = "INSERT INTO interessado (nome, endereco, numero, complemento, email, telefone, tiporesiduo, diasemana) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO interessado (nome, endereco, numero, complemento, email, telefone, tiporesiduo, diasemana, latitude, longitude) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		Connection con = null;
 		PreparedStatement pstm = null;
 		
@@ -26,7 +26,9 @@ public class InteressadoDAO {
 			pstm.setString(5, interessado.getEmailInteressado());
 			pstm.setString(6, interessado.getTelefoneInteressado());
 			pstm.setString(7, interessado.getTipoResiduoInteressado());
-			pstm.setString(8, interessado.getDiaSemanaInteressado());			
+			pstm.setString(8, interessado.getDiaSemanaInteressado());
+			pstm.setString(9, interessado.getLatitudeInteressado());
+			pstm.setString(10, interessado.getLongitudeInteressado());
 			pstm.execute();
 			
 		}catch(Exception e) {
@@ -162,5 +164,8 @@ public class InteressadoDAO {
 		
 		return interessados;
 	}
+	
+	
+
 
 }
